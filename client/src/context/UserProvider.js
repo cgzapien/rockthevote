@@ -25,7 +25,7 @@ export default function UserProvider(props){
   
     //---LOGIN--//
   function logIn(credentials) {
-    axios.post("/auth/login", credentials)
+    axios.post(`${process.env.REACT_APP_APR_URL}/auth/login`, credentials)
       .then(res => {
         const { token, user } = res.data
         localStorage.setItem("token", token)
@@ -38,7 +38,7 @@ export default function UserProvider(props){
   }
   //---SIGNUP--//
   function signUp(credentials) {
-    axios.post("/auth/signup", credentials)
+    axios.post(`${process.env.REACT_APP_APR_URL}/auth/signup`, credentials)
       .then(res => {
         const { user, token } = res.data
         localStorage.setItem("token", token)
