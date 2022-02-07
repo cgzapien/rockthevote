@@ -1,4 +1,4 @@
-# rockthevote
+# Rock the Vote!
 Community based application where users can go voice their opinions on issues regarding their communities. Vote on issues and comment on them. Back-end deployed
 using Heroku and front-end deployed using Netlify.
 
