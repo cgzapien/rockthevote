@@ -72,7 +72,7 @@ export default function UserProvider(props){
 
   //---ADD ISSUE---//
   function addIssue(issue){
-    userAxios.post("/api/issue", issue)
+    userAxios.post(`${process.env.REACT_APP_APR_URL}/api/issue`, issue)
       .then(res => {
         setUserState(prevState => ({
           ...prevState,
@@ -94,7 +94,7 @@ export default function UserProvider(props){
   }
   //---GET USERS ISSUES--//
   function getUserIssues(){
-    userAxios.get("/api/issue/user")
+    userAxios.get(`${process.env.REACT_APP_APR_URL}/api/issue/user`)
       .then(res => {
         localStorage.setItem("issues", JSON.stringify(res.data))
         setUserState(prevState => ({
@@ -106,7 +106,7 @@ export default function UserProvider(props){
   }
   //---GET ALL ISSUES---// 
   function getAllIssues(){
-    userAxios.get("/api/issue")
+    userAxios.get(`${process.env.REACT_APP_APR_URL}/api/issue`)
       .then(res => {
         localStorage.setItem("allissues", JSON.stringify(res.data))
         setUserState(prevState => ({
@@ -119,7 +119,7 @@ export default function UserProvider(props){
   //---DELETE ISSUE BY USER WHO CREATED IT---//
   function deleteIssue(DeletedId){
     console.log('DeletedId: ', DeletedId);
-    userAxios.delete(`/api/issue/${DeletedId}`)
+    userAxios.delete(`${process.env.REACT_APP_APR_URL}/api/issue/${DeletedId}`)
       .then(res => {console.log(res)
       setUserState(prevState => ({
         ...prevState,
@@ -132,7 +132,7 @@ export default function UserProvider(props){
   //---INCREMENT LIKE ON ISSUE---//
   function addLikeToIssue(id){
     console.log('from like : ', id);
-    userAxios.put(`/api/issue/like/${id}`)
+    userAxios.put(`${process.env.REACT_APP_APR_URL}/api/issue/like/${id}`)
     .then(res => {
       console.log(res)
       setUserState(prevState => ({
@@ -146,7 +146,7 @@ export default function UserProvider(props){
   //---INCREMENT DISLIKE TO ISSUE---//
   function addDislikeToIssue(id){
     console.log('id: ', id);
-    userAxios.put(`/api/issue/dislike/${id}`)
+    userAxios.put(`${process.env.REACT_APP_APR_URL}/api/issue/dislike/${id}`)
       .then(res => {
         console.log(res)
         setUserState(prevState => ({
@@ -160,7 +160,7 @@ export default function UserProvider(props){
   // //---POST COMMENT ON ISSUE---//
   // function postCommentOnIssue(issueId, comment){
   //   console.log('comment: ', comment);
-  //   userAxios.post(`/api/issues/comments/${issueId}`, comment)
+  //   userAxios.post(`${process.env.REACT_APP_APR_URL}/api/issues/comments/${issueId}`, comment)
   //     .then(res => console.log(res))
   //     .catch(err => console.log(err))
 

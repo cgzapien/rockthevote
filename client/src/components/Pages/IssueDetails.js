@@ -25,14 +25,14 @@ export default function IssueDetails() {
   }
   //---get comments for with issue id---//
   function getComments(){
-    userAxios.get(`/api/issues/comments/issue/${issueId}`)
+    userAxios.get(`${process.env.REACT_APP_APR_URL}/api/issues/comments/issue/${issueId}`)
       .then(res => setCommentsList(() => [...res.data]))
       .catch(err => console.log(err))
   }
   //---POST COMMENT ON ISSUE---//
   function postCommentOnIssue(issueId, comment){
     console.log('comment: ', comment);
-    userAxios.post(`/api/issues/comments/${issueId}`, comment)
+    userAxios.post(`${process.env.REACT_APP_APR_URL}/api/issues/comments/${issueId}`, comment)
       .then(res => setCommentsList(prevState => [...prevState, res.data]))
       .catch(err => console.log(err))
 
