@@ -11,7 +11,7 @@ import Button from '@mui/material/Button';
 
 export default function PIssue(props){
   const { addLikeToIssue, addDislikeToIssue, user: {_id} } = useContext(UserContext)
-  const { title, likes, dislikes, dateCreated, user, votedUser } = props
+  const { title, likes, dislikes, dateCreated, votedUser } = props
   const [newLikes, setNewLikes ] = useState(likes)
   const [newDislike, setNewDislike] = useState(dislikes)
   const [hasVoted, setHasVoted] = useState(false)

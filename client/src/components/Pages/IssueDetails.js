@@ -40,6 +40,7 @@ export default function IssueDetails() {
   useEffect(() => {
     getIssue()
     getComments()
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   return (
     <div className="issueDetails">

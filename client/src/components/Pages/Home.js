@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { CardMedia, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { UserContext } from "../../context/UserProvider";
 
 function Home(){
