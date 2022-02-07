@@ -21,6 +21,7 @@ mongoose.connect(
   () => console.log("connected to the rtv database")
 )
 //routes
+app.get("/", (req, res) => {res.send("hello from Express!")})
 app.use("/auth", require("./routes/AuthRouter"))
 app.use('/api', expressJwt({ secret: process.env.SECRET,  algorithms: ['HS256'] }))
 app.use("/api/issue", require("./routes/IssueRouter"))
