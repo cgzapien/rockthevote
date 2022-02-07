@@ -8,7 +8,7 @@ const mongoose = require("mongoose")
 //middleware
 app.use(express.json())
 app.use(morgan("dev"))
-app.use(cors({origin: "https://rtvserver.herokuapp.com"}))
+app.use(cors({origin: "https://rockthevote.netlify.app"}))
 //connect to mongo
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost:27017/rtv-db",
