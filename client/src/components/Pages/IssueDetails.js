@@ -19,7 +19,7 @@ export default function IssueDetails() {
 
   //---get issue from params---//
   function getIssue(){
-    userAxios.get(`/api/issue/${issueId}`)
+    userAxios.get(`${process.env.REACT_APP_APR_URL}/api/issue/${issueId}`)
       .then(res => {setIssue(() => ({...res.data}))})
       .catch(err => console.log(err))
   }

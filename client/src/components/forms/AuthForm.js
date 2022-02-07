@@ -22,13 +22,12 @@ export default function AuthForm(props) {
   const avatarStyle = {backgroundColor: "blue"}
   return (
     <Grid>
-      <Paper elevation={10} style={paperStyle} >
-        <Grid align="center">
+      <Paper elevation={10} style={paperStyle} component="form" onSubmit={handleSubmit}>
+        <Grid align="center" >
           <Avatar style={avatarStyle}><LockIcon/></Avatar>
           <h2>{formTitle}</h2>
           <TextField 
           required 
-          id="outlined-basic" 
           label="username"
           name="username"
           value={username} 
@@ -37,7 +36,7 @@ export default function AuthForm(props) {
           onChange={handleChange}/>
           <TextField 
           required 
-          id="outlined-basic" 
+          type="password"
           label="password"
           name="password"
           value={password} 
@@ -45,7 +44,7 @@ export default function AuthForm(props) {
           variant="outlined"
           onChange={handleChange} />
           <Button
-          onClick={handleSubmit} 
+          //onClick={handleSubmit} 
           type="submit"
           variant="outlined" 
           endIcon={<SendIcon/>}>{formBtn}</Button>
