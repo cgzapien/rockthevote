@@ -1,5 +1,6 @@
 const express = require("express")
 const app = express()
+const cors = require("cors")
 require("dotenv").config()
 const expressJwt = require("express-jwt")
 const morgan = require("morgan")
@@ -7,6 +8,7 @@ const mongoose = require("mongoose")
 //middleware
 app.use(express.json())
 app.use(morgan("dev"))
+app.use(cors({origin: "https://rtvserver.herokuapp.com"}))
 //connect to mongo
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost:27017/rtv-db",
