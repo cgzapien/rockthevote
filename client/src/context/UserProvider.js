@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios"
-
+//const url = `${process.env.REACT_APP_APR_URL}/auth/login` || "/auth/login"
 //import IssueContext from "./IssueProvider";
 
 
@@ -118,7 +118,7 @@ export default function UserProvider(props){
   }
   //---DELETE ISSUE BY USER WHO CREATED IT---//
   function deleteIssue(DeletedId){
-    console.log('DeletedId: ', DeletedId);
+    
     userAxios.delete(`${process.env.REACT_APP_APR_URL}/api/issue/${DeletedId}`)
       .then(res => {console.log(res)
       setUserState(prevState => ({
@@ -131,7 +131,6 @@ export default function UserProvider(props){
   }
   //---INCREMENT LIKE ON ISSUE---//
   function addLikeToIssue(id){
-    console.log('from like : ', id);
     userAxios.put(`${process.env.REACT_APP_APR_URL}/api/issue/like/${id}`)
     .then(res => {
       console.log(res)

@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router";
-
-import { Paper, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import CommentsForm from "../forms/CommentsForm"
 
 const userAxios = axios.create()
@@ -31,7 +30,6 @@ export default function IssueDetails() {
   }
   //---POST COMMENT ON ISSUE---//
   function postCommentOnIssue(issueId, comment){
-    console.log('comment: ', comment);
     userAxios.post(`${process.env.REACT_APP_APR_URL}/api/issues/comments/${issueId}`, comment)
       .then(res => setCommentsList(prevState => [...prevState, res.data]))
       .catch(err => console.log(err))
@@ -43,17 +41,18 @@ export default function IssueDetails() {
     //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   return (
-    <div className="issueDetails">
-      
-      <Paper variant="outlined" style={{marginTop: "200px"}}>
-        <Typography variant="h2">Title: {issue.title}</Typography>
-        <Typography variant="h3">Likes: {issue.likes}</Typography>
-        <Typography variant="h3">Dislikes: {issue.dislikes}</Typography>
-      </Paper>
+    <div className="issueDetails" style={{textAlign: "center"}}>
+      <Box style={{marginTop: "125px"}}>
+        <Typography variant="h2">Issue: {issue.title}</Typography>
+        <Typography variant="h5">Likes: {issue.likes}</Typography>
+        <Typography variant="h5">Dislikes: {issue.dislikes}</Typography>
+      </Box>
+      <br/>
       <CommentsForm id={issueId} setlist={setCommentsList} postComment={postCommentOnIssue}/>
+      <br/>
       <Typography variant="h3"><u>Comments:</u></Typography>
       {commentsList === undefined ? 
-          "none"
+          "No comments have been submitted"
         :
         commentsList.map(comment => <Typography key={comment._id} variant="h4">{comment.comment}</Typography> ) }
     </div>

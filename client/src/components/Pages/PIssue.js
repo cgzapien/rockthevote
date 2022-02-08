@@ -16,7 +16,6 @@ export default function PIssue(props){
   const [newDislike, setNewDislike] = useState(dislikes)
   const [hasVoted, setHasVoted] = useState(false)
   const [usersWhoHaveVoted, setUsersWhoHaveVoted] = useState(votedUser)
-  console.log('usersWhoHaveVoted: ', usersWhoHaveVoted);
   const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"];
   const date = new Date(dateCreated)
@@ -25,14 +24,14 @@ export default function PIssue(props){
   const year = date.getFullYear()
   const dateIssueCreated = `${monthNames[month]} ${day}, ${year}`
   function AuthVoterLike(){
-    if(votedUser.includes(_id)) {
+    if(usersWhoHaveVoted.includes(_id)) {
       alert("you already voted on that issue");
     } else {
       addLike(props._id)
     }
   }
   function AuthVoterDislike(){
-    if(votedUser.includes(_id)) {
+    if(usersWhoHaveVoted.includes(_id)) {
       alert("you already voted on that issue");
     } else {
       addDislike(props._id)
@@ -40,7 +39,6 @@ export default function PIssue(props){
   }
 
   function addLike(id){
-    console.log('id: ', id);
     setNewLikes(prevCount => prevCount + 1)
     addLikeToIssue(id)
     setHasVoted(preStatus => !preStatus)

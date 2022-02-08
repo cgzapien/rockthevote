@@ -22,7 +22,7 @@ export default function IssuePage(){
   return (
     <div className="issuePage">
       <AddIssueForm/>
-      <Typography variant="h4">Here is a list of your submitted issues.</Typography>  
+      <Typography variant="h4" style={{textAlign: "center"}}>Here is a list of your submitted issues.</Typography>  
       <TableContainer component={Paper}>
       <Table sx={{ maxWidth: "100%" }} aria-label="simple table">
         <TableHead>

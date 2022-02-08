@@ -24,12 +24,12 @@ export default function AddIssueForm() {
     addIssue(inputs)
     setInputs(initInputs)
   }
-  const form ={margin: "75px"}
+  const form ={margin: "75px", textAlign: "center", border: "2px solid", padding: "15px"}
   const { title, description } = inputs
   return (
     <form style={form}>
       <Box align="center" className="issueBox">
-        <Typography variant="h4">
+        <Typography variant="h4" >
           Submit <u>YOUR</u> Issue here.
         </Typography>
         <br/>  
