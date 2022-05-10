@@ -21,10 +21,24 @@ export default function AuthForm(props) {
   const paperStyle = {padding: 20, height: 350, width: 250, margin: "100px auto"}
   const avatarStyle = {backgroundColor: "blue"}
   return (
-    <Grid>
-      <Paper elevation={10} style={paperStyle} component="form" onSubmit={handleSubmit}>
-        <Grid align="center" >
-          <Avatar style={avatarStyle}><LockIcon/></Avatar>
+    <Grid component="main" container sx={{height: "100vh"}}>
+      <Grid
+              item
+              xs={false}
+              sm={4}
+              md={6}
+              sx={{
+                backgroundImage: `url(https://wallpaperaccess.com/full/285374.jpg)`,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: "cover",
+                backgroundPosition: 'fixed',
+
+              }}
+          />
+        <Grid align="center" component="form" onSubmit={handleSubmit}>
+          <Typography variant="h4">Welcome to</Typography>
+          <Typography variant="h2">Rock the Vote</Typography>
+          {/* <Avatar style={avatarStyle}><LockIcon/></Avatar> */}
           <h2>{formTitle}</h2>
           <TextField 
           required 
@@ -44,7 +58,6 @@ export default function AuthForm(props) {
           variant="outlined"
           onChange={handleChange} />
           <Button
-          //onClick={handleSubmit} 
           type="submit"
           variant="outlined" 
           endIcon={<SendIcon/>}>{formBtn}</Button>
@@ -69,7 +82,6 @@ export default function AuthForm(props) {
             </Typography>
           }
         </Grid>
-      </Paper>
     </Grid>
   )
 }
