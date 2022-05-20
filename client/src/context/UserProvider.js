@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios"
-const url = `${process.env.REACT_APP_APR_URL}/auth/login` || "/auth/login"
-//import IssueContext from "./IssueProvider";
-
 
 export const UserContext = React.createContext()
 

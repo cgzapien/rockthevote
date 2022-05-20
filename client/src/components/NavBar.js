@@ -24,9 +24,6 @@ export default function NavBar({logout}) {
         <Typography variant="h6" color="inherit" component="div" sx={{m: 2}}>
           <Link style={styles} to="/publicissues">Public Issues</Link> 
         </Typography>
-        {/* <Typography variant="h6" color="inherit" component="div" sx={{m: 2}}>
-          <Link style={styles} to="/issuedetails">Issue Details</Link> 
-        </Typography> */}
         <Typography variant="h6" color="inherit" component="div" sx={{m: 2}}  >
           <Button onClick={logout} style={{color: "white"}} variant="outlined" >Log out <LogoutIcon/></Button>
         </Typography>

@@ -39,7 +39,6 @@ export default function CommentsForm(props){
         type="submit"
         variant="outlined"
         endIcon={<SendIcon/>}
-        //onClick={() => postComment(id, input)}
       >Submit Comment</Button>
     </form>
   )

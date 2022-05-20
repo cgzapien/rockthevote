@@ -57,11 +57,9 @@ export default function PIssue(props){
         <TableCell align="center" ><Button  disabled={hasVoted} onClick={() => AuthVoterLike() } ><ThumbUpOffAltIcon/></Button> {newLikes} </TableCell>
         <TableCell align="center"  ><Button disabled={hasVoted} onClick={() => AuthVoterDislike() }><ThumbDownOffAltIcon/> </Button> {newDislike} </TableCell>
         <TableCell align="center" > {dateIssueCreated}</TableCell>
-        {/* <TableCell align="center" >{user}</TableCell> */}
       </TableRow>
     </TableBody>
   )
 }
 
-//() => addLike(props._id)
 

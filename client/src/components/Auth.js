@@ -1,7 +1,7 @@
 import React, {useState, useContext} from "react";
-
 import { UserContext } from "../context/UserProvider"
 import AuthForm from "./forms/AuthForm"
+import "../css/landingPage.css"
 
 export default function Auth(){
   const initInputs = {username: "", password: ""}
@@ -29,7 +29,7 @@ export default function Auth(){
     resetAuthErr()
   }
   return (
-    <div>
+    <div id="authform"  component="div">
       {!toggle ?
       <>
         <AuthForm

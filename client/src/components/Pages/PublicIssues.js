@@ -33,22 +33,6 @@ export default function PublicIssues(){
           </TableRow>
         </TableHead>
         {sortIssues.map(issue => <PIssue {...issue} key={issue._id} />)}
-        {/* <TableBody>
-          {allIssues.map((issue) => 
-          
-          {return (
-            <TableRow
-              key={issue._id}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-              <TableCell component="th" scope="issue">{issue.title}</TableCell>
-              <TableCell align="center" onClick={() => console.log("like")}><Button><ThumbUpOffAltIcon/></Button> {issue.upvote}</TableCell>
-              <TableCell align="center"  onClick={() => console.log("dislike")}><Button><ThumbDownOffAltIcon/> </Button> {issue.downvote}</TableCell>
-              <TableCell align="center"  >{issue.dateCreated}</TableCell>
-              <TableCell align="center"  >user</TableCell>
-            </TableRow>
-          )}
-          )}
-        </TableBody> */}
       </Table>
     </TableContainer>
     </div>
