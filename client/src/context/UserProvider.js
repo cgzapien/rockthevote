@@ -19,7 +19,6 @@ export default function UserProvider(props){
     allIssues: JSON.parse(localStorage.getItem("allissues")) || []
   }
   const [ userState, setUserState ] = useState(initState)
-  
     //---LOGIN--//
   function logIn(credentials) {
     axios.post(`${process.env.REACT_APP_APR_URL}/auth/login`, credentials)

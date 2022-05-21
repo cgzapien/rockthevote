@@ -2,8 +2,7 @@ import React from "react";
 import { Grid, Avatar, TextField, Button, Typography, Link, Box } from "@mui/material"
 import SendIcon from '@mui/icons-material/Send';
 import LockIcon from '@mui/icons-material/Lock';
-import vote from "/Users/zapien/Desktop/deployed apps/rockthevote/client/src/media/vote.jpg"
-
+import vote from "./vote.jpg"
 export default function AuthForm(props) {
   const { 
     formTitle,
